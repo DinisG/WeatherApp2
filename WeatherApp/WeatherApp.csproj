@@ -51,7 +51,9 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\cloudy.png" />
 	  <None Remove="Resources\Images\humidity.png" />
+	  <None Remove="Resources\Images\overlay.jpg" />
 	  <None Remove="Resources\Images\pressure.png" />
+	  <None Remove="Resources\Images\weather.png" />
 	  <None Remove="Resources\Images\wind.png" />
 	</ItemGroup>
 

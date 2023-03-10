@@ -1,41 +1,177 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WeatherApp.MainPage">
+             x:Class="WeatherApp.MainPage"
+             xmlns:local="clr-namespace:WeatherApp">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Small"></Setter>
+                <Setter Property="TextColor" Value="Gray"></Setter>
+            </Style>
+            <Style x:Key="labelResultStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium"></Setter>
+                <Setter Property="Margin" Value="10,0,0,0"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid VerticalOptions="FillAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackLayout Orientation="Vertical">
+            <StackLayout
+            Margin="20,10"
+            HorizontalOptions="Start"
+            Orientation="Vertical"
+            Spacing="20"
+            VerticalOptions="Start">
+        </StackLayout>
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
+        <StackLayout 
+            Margin="0,50" 
+            HorizontalOptions="Center" 
+            Orientation="Vertical" 
             VerticalOptions="Center">
-
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
+            <StackLayout HorizontalOptions="Center" Orientation="Vertical">
+                <Image HeightRequest="50" 
+                       Source="weather.png" 
+                       VerticalOptions="Center" 
+                       WidthRequest="50"/>
+                <StackLayout Margin="0,10" HorizontalOptions="Center" Orientation="Horizontal">
+                    <Label 
+                        FontAttributes="Bold"
+                        FontSize="70"
+                        Text="12"
+                        TextColor="Black"
+                        VerticalOptions="Center" />
+                    <Label 
+                        FontSize="34"
+                        Text="ºC"
+                        TextColor="Black"
+                        VerticalOptions="Center"/>
+                </StackLayout>
+            </StackLayout>
             <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
-        </VerticalStackLayout>
-    </ScrollView>
+                FontSize="16"
+                Text="rain"
+                HorizontalOptions="Center"
+                TextColor="Black"/>
+            <Label FontSize="12"
+                   HorizontalOptions="Center"
+                   Text="March 10 2:00PM"
+                   TextColor="Black"/>
+        </StackLayout>
+        <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Spacing="50">
+                <StackLayout HorizontalOptions="Center" Orientation="Vertical" Spacing="20">
+                    <Image Source="humidity.png"/>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="14"
+                        HorizontalOptions="Center"
+                        Text="50%"/>
+                    <Label
+                        FontSize="11"
+                        HorizontalOptions="Center"
+                        Text="Humidity"
+                        TextColor="#7D7D7D"/>
+                </StackLayout>
+                <StackLayout HorizontalOptions="Center" Orientation="Vertical" Spacing="20">
+                    <Image Source="pressure.png"/>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="14"
+                        HorizontalOptions="Center"
+                        Text="1011hpa"/>
+                    <Label
+                        FontSize="11"
+                        HorizontalOptions="Center"
+                        Text="Pressure"
+                        TextColor="#7D7D7D"/>
+                </StackLayout>
+                <StackLayout HorizontalOptions="Center" Orientation="Vertical" Spacing="20">
+                    <Image Source="wind.png"/>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="14"
+                        HorizontalOptions="Center"
+                        Text="2.4m/s"/>
+                    <Label
+                        FontSize="11"
+                        HorizontalOptions="Center"
+                        Text="Wind"
+                        TextColor="#7D7D7D"/>
+                </StackLayout>
+                <StackLayout HorizontalOptions="Center" Orientation="Vertical" Spacing="20">
+                    <Image Source="cloudy.png"/>
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="14"
+                        HorizontalOptions="Center"
+                        Text="10%"/>
+                    <Label
+                        FontSize="11"
+                        HorizontalOptions="Center"
+                        Text="Cloudiness"
+                        TextColor="#7D7D7D"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Spacing="50" Margin="0,40,0,0">
+                <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="Small"
+                        Text="Time of Sunrise"
+                        TextColor="Black"
+                        VerticalOptions="Center"/>
+                    <Label
+                        FontSize="15"
+                        Text="12:00:00 AM"
+                        TextColor="Black"
+                        VerticalOptions="Center"
+                        Margin="0,10,0,0"/>
+                    
+                </StackLayout>
+                <StackLayout Orientation="Vertical" HorizontalOptions="Center">
+                    <Label
+                        FontAttributes="Bold"
+                        FontSize="Small"
+                        Text="Time of Sunset"
+                        TextColor="Black"
+                        VerticalOptions="Center"/>
+                    <Label
+                        FontSize="15"
+                        Text="12:00:00 AM"
+                        TextColor="Black"
+                        VerticalOptions="Center"
+                        Margin="0,10,0,0"/>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand" Margin="0,40,0,0" Orientation="Horizontal">
+                <Entry
+                    x:Name="_cityEntry"
+                    Margin="5,0"
+                    BackgroundColor="#7c58c9"
+                    CharacterSpacing="7"
+                    HorizontalTextAlignment="Center"
+                    Text="City name"
+                    TextColor="White"
+                    VerticalOptions="center"
+                    WidthRequest="250"/>
+                <Button 
+                    BackgroundColor="#7c58c9" 
+                    BorderColor="White" 
+                    BorderWidth="1"
+                    Clicked="OnGetWeatherButtonClicked"
+                    Text= "Search"
+                    TextColor="White"/>
+            </StackLayout>
+        </StackLayout>
+    </Grid>
 
 </ContentPage>
