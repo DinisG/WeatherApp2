@@ -55,6 +55,7 @@
 	  <None Remove="Resources\Images\pressure.png" />
 	  <None Remove="Resources\Images\weather.png" />
 	  <None Remove="Resources\Images\wind.png" />
+	  <None Remove="Resources\Images\wind2.png" />
 	</ItemGroup>
 
 	<ItemGroup>

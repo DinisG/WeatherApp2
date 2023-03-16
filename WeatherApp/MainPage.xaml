@@ -17,14 +17,6 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <Grid VerticalOptions="FillAndExpand">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
         <StackLayout Orientation="Vertical">
             <StackLayout
             Margin="20,10"
@@ -102,7 +94,7 @@
                         TextColor="#7D7D7D"/>
                 </StackLayout>
                 <StackLayout HorizontalOptions="Center" Orientation="Vertical" Spacing="20">
-                    <Image Source="wind.png"/>
+                    <Image Source="wind2.png"/>
                     <Label
                         FontAttributes="Bold"
                         FontSize="14"
