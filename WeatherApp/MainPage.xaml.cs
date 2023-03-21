@@ -28,7 +28,21 @@ public partial class MainPage : ContentPage
         weatherImg.Add("12d", "https://openweathermap.org/img/wn/12d.png");
         weatherImg.Add("13d", "https://openweathermap.org/img/wn/13d.png");
         weatherImg.Add("50d", "https://openweathermap.org/img/wn/50d.png");
-        
+        weatherImg.Add("01n", "https://openweathermap.org/img/wn/01n.png");
+        weatherImg.Add("02n", "https://openweathermap.org/img/wn/02n.png");
+        weatherImg.Add("03n", "https://openweathermap.org/img/wn/03n.png");
+        weatherImg.Add("04n", "https://openweathermap.org/img/wn/04n.png");
+        weatherImg.Add("05n", "https://openweathermap.org/img/wn/05n.png");
+        weatherImg.Add("06n", "https://openweathermap.org/img/wn/06n.png");
+        weatherImg.Add("07n", "https://openweathermap.org/img/wn/07n.png");
+        weatherImg.Add("08n", "https://openweathermap.org/img/wn/08n.png");
+        weatherImg.Add("09n", "https://openweathermap.org/img/wn/09n.png");
+        weatherImg.Add("10n", "https://openweathermap.org/img/wn/10n.png");
+        weatherImg.Add("11n", "https://openweathermap.org/img/wn/11n.png");
+        weatherImg.Add("12n", "https://openweathermap.org/img/wn/12n.png");
+        weatherImg.Add("13n", "https://openweathermap.org/img/wn/13n.png");
+        weatherImg.Add("50n", "https://openweathermap.org/img/wn/50n.png");
+
 
         WeatherData weatherData = new();
         weatherData.IconUrl = Constants.DefaultImg;
