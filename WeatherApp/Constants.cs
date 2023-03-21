@@ -10,5 +10,6 @@ namespace WeatherApp
     {
         public static string OpenWeatherMapEndpoint = "http://api.openweathermap.org/data/2.5/weather";
         public static string OpenWeatherMapAPIKey = "115ced9c3e746929ea6645c163623d9f";
+        public static string DefaultImg = "globo.png";
     }
 }

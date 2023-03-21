@@ -9,6 +9,8 @@ namespace WeatherApp
 {
     public class WeatherData
     {
+        public string IconUrl { get; set; }
+
         [JsonProperty("name")]
         public string Title { get; set; }
 
@@ -44,6 +46,8 @@ namespace WeatherApp
 
         [JsonProperty("cod")]
         public long Cod { get; set; }
+
+
     }
 
 

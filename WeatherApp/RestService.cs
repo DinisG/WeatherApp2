@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 namespace WeatherApp
 {
     public class RestService
-    {   
-         HttpClient _client;
-        public RestService() 
+    {
+        HttpClient _client;
+        public RestService()
         {
             _client = new HttpClient();
         }
@@ -25,7 +25,7 @@ namespace WeatherApp
                 var response = await _client.GetAsync(query);
                 if (response.IsSuccessStatusCode) {
                     var content = await response.Content.ReadAsStringAsync();
-                    weatherData = JsonConvert.DeserializeObject<WeatherData>(content);  
+                    weatherData = JsonConvert.DeserializeObject<WeatherData>(content);
                 }
             }
             catch (Exception ex)
@@ -37,3 +37,6 @@ namespace WeatherApp
         }
     }
 }
+        
+    
+

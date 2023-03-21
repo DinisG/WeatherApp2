@@ -50,6 +50,7 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\Images\cloudy.png" />
+	  <None Remove="Resources\Images\globo.png" />
 	  <None Remove="Resources\Images\humidity.png" />
 	  <None Remove="Resources\Images\overlay.jpg" />
 	  <None Remove="Resources\Images\pressure.png" />

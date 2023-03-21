@@ -2,7 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WeatherApp.MainPage"
-             xmlns:local="clr-namespace:WeatherApp">
+             xmlns:local="clr-namespace:WeatherApp"
+             Title="" >
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="labelStyle" TargetType="Label">
@@ -16,57 +17,58 @@
             <local:LongToDateTimeConverter x:Key="longToDateTimeConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    <Grid VerticalOptions="FillAndExpand">
-        <StackLayout Orientation="Vertical">
+    <ScrollView>
+        <StackLayout
+                 Orientation="Vertical"
+                 Spacing="20"
+                 VerticalOptions="CenterAndExpand">
             <StackLayout
-            Margin="20,10"
-            HorizontalOptions="Start"
-            Orientation="Vertical"
-            Spacing="20"
-            VerticalOptions="Start">
+            HorizontalOptions="Center"
+            Orientation="Vertical"  >
                 <Label
-                    FontSize="16"
+                    FontSize="38"
                     Text="{Binding Title}"
                     TextColor="Black"
-                    Margin="40,40,0,0"
+                    FontAttributes="Bold"
                    />
-        </StackLayout>
+            </StackLayout>
 
             <StackLayout 
-            Margin="0,50" 
+            Padding="0,10"
             HorizontalOptions="Center" 
             Orientation="Vertical" 
             VerticalOptions="Center">
                 <StackLayout HorizontalOptions="Center" Orientation="Vertical">
-                <Image HeightRequest="50" 
-                       Source="weather.png" 
+                    <Image 
+                       Source="{Binding IconUrl}" 
                        VerticalOptions="Center" 
-                       WidthRequest="50"/>
-                <StackLayout Margin="0,10" HorizontalOptions="Center" Orientation="Horizontal">
-                    <Label 
+                       WidthRequest="80" 
+                       />
+                    <StackLayout Padding="0,10" HorizontalOptions="Center" Orientation="Horizontal">
+                        <Label 
                         FontAttributes="Bold"
                         FontSize="70"
                         Text="{Binding Main.Temperature}"
                         TextColor="Black"
                         VerticalOptions="Center" />
-                    <Label 
+                        <Label 
                         FontSize="34"
                         Text="ºC"
                         TextColor="Black"
                         VerticalOptions="Center"/>
+                    </StackLayout>
                 </StackLayout>
-            </StackLayout>
-            <Label
+                <Label
                 FontSize="16"
                 Text="{Binding Weather[0].Description}"
                 HorizontalOptions="Center"
                 TextColor="Black"/>
-            <Label FontSize="12"
+                <Label FontSize="12"
                    HorizontalOptions="Center"
                    Text="March 10 2:00PM"
                    TextColor="Black"/>
-        </StackLayout>
-        <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Spacing="50">
+            </StackLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal" Spacing="50">
                 <StackLayout HorizontalOptions="Center" Orientation="Vertical" Spacing="20">
                     <Image Source="humidity.png"/>
                     <Label
@@ -134,7 +136,7 @@
                         TextColor="Black"
                         VerticalOptions="Center"
                         Margin="0,10,0,0"/>
-                    
+
                 </StackLayout>
                 <StackLayout Orientation="Vertical" HorizontalOptions="Center">
                     <Label
@@ -171,6 +173,5 @@
                     TextColor="White"/>
             </StackLayout>
         </StackLayout>
-    </Grid>
-
+    </ScrollView>
 </ContentPage>
